@@ -17,6 +17,26 @@ class Sys {
 		}
 	}
 				
+	public function getperson($userid) {
+		global $sys;
+		$sql='SELECT * FROM org_persons WHERE id='.$userid;
+
+		$user=$sys->read($sql,false);
+		if (!$user) {
+			$user['id']=0;
+			$user['email']="*";
+			return $user;
+		}  else {
+			if ($user['email']=='hibratt@gmail.com') {
+				$sys->sysadm=true;
+				$this->sysadm=true;
+			} else {
+				$this->sysadm=false;
+			}
+		return $user;
+		}
+	}				
+				
 	public function tut($t) {
 		global $user;
 		if ($user->sysadm) {
