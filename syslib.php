@@ -27,6 +27,7 @@ class Sys {
 			$user['email']="*";
 			return $user;
 		}  else {
+			//Två olika sysadm!!!!!!!!!!!!!!!!!
 			if ($user['email']=='hibratt@gmail.com') {
 				$sys->sysadm=true;
 				$this->sysadm=true;
