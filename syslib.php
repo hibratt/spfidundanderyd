@@ -16,5 +16,12 @@ class Sys {
 			throw new PDOException('Could not connect to database, hiding connection details.');
 		}
 	}
+				
+	public function tut($t) {
+		global $user;
+		if ($user->sysadm) {
+		echo chr(10).'<br><span style="color:red; font-size:0.7rem;">'.$t.'</span>';
+		}
+	}
         
 } //Class Sys      
